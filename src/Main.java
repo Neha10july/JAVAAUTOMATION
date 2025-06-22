@@ -13,7 +13,7 @@ class Main {
             }
 
             String extracted = str.substring(start, end);
-            System.out.println(count++ + ": " + extracted);
+            System.out.println(count++ + "; " + extracted);
 
             // move start to the next position after extracted substring
             start = end;
