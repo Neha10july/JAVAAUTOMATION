@@ -15,5 +15,14 @@ public class CssSelectors {
 
         //driver.findElement(By.cssSelector("input.search-box-text")).sendKeys("T-shirts");
         //driver.findElement(By.cssSelector(".search-box-text")).sendKeys("Computer");
+
+        //tag attribute     tag[attribute='value']
+        //driver.findElement(By.cssSelector("input[placeholder='Search store']")).sendKeys("T-shirts");
+        //driver.findElement(By.cssSelector("[placeholder='Search store']")).sendKeys("Electronics");
+
+        //tag class attribute
+        //driver.findElement(By.cssSelector("input.search-box-text[name='q']")).sendKeys("");
+        driver.findElement(By.cssSelector(".search-box-text[name='q']")).sendKeys("T-shirts");
+
     }
 }
