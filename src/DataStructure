@@ -1,0 +1,58 @@
+What is data structure?
+A data structure is a specialized format for orgaizing, managing and
+storing data in computer so that it ccan be accessed and modified efficiently.
+
+1. It defines how data is logically arranged in memory and what operations can be
+performed( like , searching, insertng, delation, sorting etc).
+
+Why Important?
+The choice of right data structured diectly impacts the
+performance of algorithm in term space and tie complexity.
+
+Basic operations:
+insert: Add element in the structure
+delete: Reomove element from the structure
+Traverse: visit each element
+Update: Modify a data element
+Search: Find ele in the array
+
+
+Java Data structure
+
+Arrays
+ArrayList
+LinkedList
+Stack
+Queue
+Deque
+Hashmap
+Treemap
+Hashset
+Priority Queue
+Vectors
+Treeset
+Hashtable
+Enumset
+LinkHashMap
+
+------------------------------------------------->
+1.What is array in Java?
+An array is a data structure that store a fixed-size and contegeous
+memory based pf the same type element.
+Fixed Size
+Statice Structure
+Mutability
+
+-------------------------------------------------->
+
+Operations:
+Array Creation
+Array indexing
+Array Modification
+Array Travesing
+Standard in-build methods
+
+
+
+
+
