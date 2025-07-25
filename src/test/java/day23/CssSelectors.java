@@ -8,6 +8,9 @@ public class CssSelectors {
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com/");
+        ///html/body/div[6]/div[1]/div[2]/div[2]/form/input
+        ////*[@id="small-searchterms"]
+        ///html[1]/body[1]/div[6]/div[1]/div[1]/div[1]/div[1]/select[1]
 
         driver.manage().window().maximize();
         //driver.findElement(By.cssSelector("input#small-searchterms")).sendKeys("T-shirts");
