@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Rahul Sharma",
+      "age": 20,
+      "class": "BCA 2nd Year",
+      "email": "rahul.sharma@example.com",
+      "marks": {
+        "math": 85,
+        "science": 78,
+        "english": 90
+      }
+    },
+    {
+      "id": 2,
+      "name": "Neha Bansal",
+      "age": 21,
+      "class": "B.Tech 3rd Year",
+      "email": "neha.bansal@example.com",
+      "marks": {
+        "math": 92,
+        "science": 88,
+        "english": 95
+      }
+    },
+    {
+      "id": 3,
+      "name": "Amit Verma",
+      "age": 19,
+      "class": "BSc 1st Year",
+      "email": "amit.verma@example.com",
+      "marks": {
+        "math": 76,
+        "science": 81,
+        "english": 72
+      }
+    }
+  ]
+}
