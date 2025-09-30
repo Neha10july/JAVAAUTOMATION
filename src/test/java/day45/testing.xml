@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testing.org/testng-1.0.dtd">
+<suite thread-count="5" name="suite"  parallel="tests">
+<test  name="chrometest">
+<parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
+    <classes>
+        <class name="day45.ParamTest"></class>
+    </classes>
+</test>
+
+    <test name="firefoxtest">
+    <parameter name="browser" value="firefox"/>
+        <parameter name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
+    <classes>
+        <class name="day45.ParamTest"></class>
+    </classes>
+    </test>
+
+    <test name="edgetest">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="day45.ParamTest"></class>
+        </classes>
+    </test>
+</suite>

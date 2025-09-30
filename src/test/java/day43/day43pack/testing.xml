@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testing.org/testng-1.0.dtd">
+<suite name="mysuite">
+    <test name="mytest1">
+        <classes>
+            <class name="day43.day43pack.C1"/>
+            <class name="day43.day43pack.C2"/>
+            <class name="day43.day43pack.C3"/>
+        </classes>
+    </test>
+
+    <test name="mytest2">
+        <classes>
+            <class name="day43.day43pack.C1"/>
+            <class name="day43.day43pack.C2"/>
+            <class name="day43.day43pack.C3"/>
+        </classes>
+    </test>
+</suite>
