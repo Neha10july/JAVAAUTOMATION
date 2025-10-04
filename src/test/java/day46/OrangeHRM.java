@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.time.Duration;
 
-@Listeners(day46.MyListener.class)
+//@Listeners(day46.MyListener.class)
 public class OrangeHRM {
     WebDriver driver;
     @BeforeClass
@@ -33,7 +33,7 @@ public class OrangeHRM {
 
     @Test(priority = 2)
     void testAppUrl(){
-        Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.oragehrmlive.com/web/index.php/auth/login");
     }
 
     @Test(priority = 3,dependsOnMethods = {"testAppUrl"})

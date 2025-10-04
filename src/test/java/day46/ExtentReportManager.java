@@ -9,15 +9,31 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class ExtentReportManager implements ITestListener {
-    public ExtentSparkReporter sparkReporter; //UI of the report.
-    public ExtentReports extentReports; // populate common info on the report.
-    public ExtentTest test; // creating test case entries in the report and update status of the test methods
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-    public void onStart(ITestContext context){
-        sparkReporter = new ExtentSparkReporter(System.getProperty("urer.dir") + "/reports/myReport.html");
-        sparkReporter.config().setDocumentTitle("Automation Report"); // Title of the report
-        sparkReporter.config().setReportName("Functional Testing"); // Name to the report
+public class ExtentReportManager implements ITestListener {
+    public ExtentSparkReporter sparkReporter;
+    public ExtentReports extentReports;
+    public ExtentTest test;
+
+    @Override
+    public void onStart(ITestContext context) {
+        // ✅ Create timestamp for unique report name
+        try {
+            String reportFolder = System.getProperty("user.dir") + "/reports/";
+            new java.io.File(reportFolder).mkdirs();
+
+            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            String reportPath = reportFolder + "ExtentReport_" + timeStamp + ".html";
+
+            sparkReporter = new ExtentSparkReporter(reportPath);
+        } catch (Exception e) {
+            e.printStackTrace();  // 🔎 This will show the real cause in console
+        }
+
+        sparkReporter.config().setDocumentTitle("Automation Report");
+        sparkReporter.config().setReportName("Functional Testing");
         sparkReporter.config().setTheme(Theme.DARK);
 
         extentReports = new ExtentReports();
@@ -25,26 +41,32 @@ public class ExtentReportManager implements ITestListener {
 
         extentReports.setSystemInfo("Computer Name", "localhost");
         extentReports.setSystemInfo("Environment", "QA");
-        extentReports.setSystemInfo("Tester Name","Pavan");
-        extentReports.setSystemInfo("os","Windows11");
-        extentReports.setSystemInfo("Browser name", "Chrome");
+        extentReports.setSystemInfo("Tester Name", "Pavan");
+        extentReports.setSystemInfo("OS", "Windows 11");
+        extentReports.setSystemInfo("Browser", "Chrome");
     }
 
-    public void onTestSuccess(ITestResult result){
-        test = extentReports.createTest(result.getName()); //create a new entry in the report.
-        test.log(Status.PASS,"Test case PASSED is:" + result.getName()); // update status p/f/s
-    }
-
-    public void onTestFaliure(ITestResult result){
+    @Override
+    public void onTestSuccess(ITestResult result) {
         test = extentReports.createTest(result.getName());
-        test.log(Status.FAIL,"Test case FAILED is: " + result.getName());
-        test.log(Status.FAIL,"Test case FAILED cause is: " + result.getThrowable());
-
+        test.log(Status.PASS, "Test case PASSED: " + result.getName());
     }
 
-    public void onTestSkipped(ITestResult result){
+    @Override
+    public void onTestFailure(ITestResult result) {
         test = extentReports.createTest(result.getName());
-        test.log(Status.SKIP, "Test case SKIPPED is: " + result.getName());
+        test.log(Status.FAIL, "Test case FAILED: " + result.getName());
+        test.log(Status.FAIL, "Cause: " + result.getThrowable());
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        test = extentReports.createTest(result.getName());
+        test.log(Status.SKIP, "Test case SKIPPED: " + result.getName());
+    }
+
+    @Override
+    public void onFinish(ITestContext context) {
+        extentReports.flush();
     }
 }
-
