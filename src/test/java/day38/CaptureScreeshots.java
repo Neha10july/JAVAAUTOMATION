@@ -18,13 +18,14 @@ public class CaptureScreeshots {
         driver.manage().window().maximize();
 
         //1) full page screeshot
-       /* TakesScreenshot ts = (TakesScreenshot)driver;
+        TakesScreenshot ts = (TakesScreenshot)driver;
         File sourcfile = ts.getScreenshotAs(OutputType.FILE);
 
         //C:\Users\Neha Shah\IdeaProjects\seleniumwebdriver
-        File targefile = new File(System.getProperty("user.dir")+"\\screenshots\\img.png");
+        File targefile = new File(System.getProperty("user.dir")+"\\screenshots\\img1.png");
         sourcfile.renameTo(targefile); // copy source file to target file
-*/
+
+
         /*//2) Capture the screenshot of specific section.
         WebElement featuredProduct = driver.findElement(By.xpath("//div[@class='product-grid home-page-product-grid']"));
 
@@ -33,10 +34,10 @@ public class CaptureScreeshots {
         sourcefile.renameTo(targefile);// copy sourcefile to target file.
 */
         //3) Capture the screenshot of webelement.
-        WebElement logo = driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
+       /* WebElement logo = driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']"));
         File source_file=logo.getScreenshotAs(OutputType.FILE);
         File targefile = new File(System.getProperty("user.dir")+ "\\screenshots\\logo.png");
-        System.out.println(targefile + "It is image.");
+        System.out.println(targefile + "It is image.");*/
         //driver.quit();
     }
 }

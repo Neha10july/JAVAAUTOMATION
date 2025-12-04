@@ -22,7 +22,7 @@ public class MouseHoverAction {
         Actions act = new Actions(driver);
 
         act.moveToElement(desktops).moveToElement(mac).click().build().perform();
-        driver.close();
+        //driver.close();
 
     }
 }
